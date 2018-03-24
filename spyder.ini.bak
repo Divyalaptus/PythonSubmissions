@@ -193,10 +193,10 @@ focus_to_editor = True
 onsave_analysis = False
 fullpath_sorting = True
 splitter_state = 000000ff00000001000000010000036101ffffffff010000000100
-recent_files = ['C:\\Users\\Divyalaptus\\.spyder-py3\\projectFile.py', 'C:\\Users\\Divyalaptus\\.spyder-py3\\temp.py']
+recent_files = ['C:\\Users\\Divyalaptus\\.spyder-py3\\main.py', 'C:\\Users\\Divyalaptus\\.spyder-py3\\projectFile.py', 'C:\\Users\\Divyalaptus\\.spyder-py3\\temp.py']
 first_time = True
-filenames = ['C:\\Users\\Divyalaptus\\.spyder-py3\\projectFile.py']
-layout_settings = {'hexstate': '000000ff0000000100000001000002ce00ffffffff010000000100', 'sizes': [718], 'splitsettings': [(False, 'C:\\Users\\Divyalaptus\\.spyder-py3\\projectFile.py', [18])]}
+filenames = ['C:\\Users\\Divyalaptus\\.spyder-py3\\main.py']
+layout_settings = {'hexstate': '000000ff0000000100000001000002ce00ffffffff010000000100', 'sizes': [718], 'splitsettings': [(False, 'C:\\Users\\Divyalaptus\\.spyder-py3\\main.py', [16])]}
 windows_layout_settings = []
 
 [historylog]
@@ -228,7 +228,7 @@ enable = True
 show_fullpath = False
 show_all_files = False
 show_comments = True
-expanded_state = {4607238391706430052: True, 1159977073522089860: False, -8967192856102843149: False, 1344965662848518788: False, -3716123262126077135: False, -8379083455440827128: False, -6088450946190992883: False}
+expanded_state = {-5102801182143837389: True, 8942067109204237011: False, 2509112532789609438: False, 7356576920100832292: False, -3326868626110141350: False, 2872057186805399173: False, -7195143882621779695: False}
 first_time = True
 scrollbar_position = (0, 0)
 visibility = False

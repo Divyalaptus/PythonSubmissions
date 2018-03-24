@@ -13,3 +13,6 @@ runfile('C:/Users/Divyalaptus/.spyder-py3/temp.py', wdir='C:/Users/Divyalaptus/.
 
 ## ---(Tue Mar 20 19:59:53 2018)---
 runfile('C:/Users/Divyalaptus/.spyder-py3/projectFile.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Fri Mar 23 16:02:10 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
