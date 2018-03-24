@@ -20,33 +20,43 @@ if len(spy_name)>0 :
 else: ########### if the spy inputs a space #############
     print("A Spy needs to have a valid name. Try again please. ")
 
+############## initialize spy_age, spy_rating, and spy_is_online ##################
 spy_age = 0
 spy_rating = 0.0
 spy_is_online = False
 
-spy_age = input("What is your age?")
+################### input spy_age #####################
+spy_age = int(input("What is your age?"))
+print(type(spy_age))
  
-if spy_age > '12' and spy_age < '50':
-     spy_rating = input("What is your spy rating?")
-      
+##################### checking whether spy is of correct age and input rating of spy ######################
+if spy_age > 12 and spy_age < 50 :
+     spy_rating = float(input("What is your spy rating?"))
+
+################# if spy is not in the age range #############
 else:
     print ("Sorry you are not of the correct age to be a spy")
-    
-           
-if spy_rating > '4.5':
+
+if spy_rating > 4.5:
          print ("Great ace!")
-elif spy_rating > '3.5' and spy_rating <= '4.5':
+         
+elif spy_rating > 3.5 and spy_rating <= 4.5:
          print ("You are one of the good ones.")
-elif spy_rating >= '2.5' and spy_rating <= '3.5':
+         
+elif spy_rating >= 2.5 and spy_rating <= 3.5:
          print ("You can always do better")
 else:
          print ("We can always use somebody to help in the office.")
 
+############# concatinating string with int and float #################
 spy_is_online = True
 welcome_note = "Authentication complete. Welcome "
-welcome_note +=spy_name+" "
-welcome_note +=spy_age+" and rating of: "
-welcome_note +=spy_rating
-welcome_note +=" Proud to have you onboard"
+welcome_note += spy_name+" age: "
+welcome_note += str(spy_age)
+welcome_note += " and rating of: "
+welcome_note += str(spy_rating)
+welcome_note += " Proud to have you onboard"
 print (welcome_note)
 
+    
+           
