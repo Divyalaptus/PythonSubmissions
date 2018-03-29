@@ -16,3 +16,11 @@ runfile('C:/Users/Divyalaptus/.spyder-py3/projectFile.py', wdir='C:/Users/Divyal
 
 ## ---(Fri Mar 23 16:02:10 2018)---
 runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Mon Mar 26 07:34:54 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/spy_details.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Wed Mar 28 15:29:13 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+2
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
