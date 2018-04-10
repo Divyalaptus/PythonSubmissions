@@ -24,3 +24,46 @@ runfile('C:/Users/Divyalaptus/.spyder-py3/spy_details.py', wdir='C:/Users/Divyal
 runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
 2
 runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sat Mar 31 09:03:22 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sat Mar 31 12:21:26 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sat Mar 31 12:25:22 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sun Apr  1 12:22:17 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sun Apr  1 13:45:33 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sun Apr  1 14:06:54 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sun Apr  1 21:08:57 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Mon Apr  2 05:53:11 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Mon Apr  2 13:08:51 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Mon Apr  2 16:16:01 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Mon Apr  2 16:34:19 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+Steganography.encode(original_image, output_path, text)
+
+## ---(Wed Apr  4 06:52:29 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Wed Apr  4 19:11:55 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+python
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')

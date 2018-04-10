@@ -9,3 +9,4 @@ spy_name = "Mr. James Bond"
 spy_age = 45
 spy_rating = 4
 print("Welcome %s of age: %d having a rating of: %d,"(spy_name, spy_age, spy_rating))
+from steganography.steganography import Steganography
