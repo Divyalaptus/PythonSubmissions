@@ -67,3 +67,6 @@ runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.
 runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
 python
 runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Mon Apr  9 20:58:27 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')

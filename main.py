@@ -1,4 +1,5 @@
 ############################ SPY CHAT #############################
+from spy_details import spy, Spy, friends, ChatMessage
 import csv
 
 from termcolor import colored
@@ -12,37 +13,33 @@ spy_age = 23
 spy_rating = 4.7
 
 ######################## adding a friend ########################
-friends = []
-friends_name = []
-friends_rating = []
-friends_age = []
-friends_is_online = []
-friends_status = []
 
 
 def add_friends():
-    new_friend = {
-        'name': '',
-        'salutation': '',
-        'age': 0,
-        'rating': 0.0,
-        'chats' : []
+    name = raw_input("Please add your friend's name: ")
+    salutation = raw_input("Are they Mr. or Ms.?: ")
+    name = salutation + " " + name
 
-    }
-    new_friend['name'] = raw_input("Please add your friend\'s name:")
-    new_friend['salutation'] = raw_input("Are they Mr or Mrs? ")
-    new_friend['name'] = new_friend['salutation'] + ". " + new_friend['name']
-    new_friend['age'] = int(raw_input("Age?"))
-    new_friend['rating'] = float(raw_input("Spy rating?"))
-    if len(new_friend['name']) > 0 and new_friend['age'] > 12 and new_friend['age'] < 50 and new_friend[
-        'rating'] >= spy_rating:
+    age = int(raw_input("Age?"))
+    rating = float(raw_input("Spy rating?"))
+
+    if len(name) > 0 and age > 12 and rating >= spy.rating:
+
+        new_friend = Spy(name=name, salutation=salutation, age=age, rating=rating)
+
         friends.append(new_friend)
-        with open('friends.csv','a') as friends_data:
+
+        with open('friends.csv', 'a') as friends_data:
             writer = csv.writer(friends_data)
-            writer.writerow([new_friend['name'], new_friend['salutation'], new_friend['rating'], new_friend['age']])
-        print(colored("Friend added!!!","blue"))
+            writer.writerow(
+                [new_friend.name, new_friend.salutation, new_friend.rating, new_friend.age, new_friend.is_online])
+
+        print 'Friend Added!'
+
     else:
-        print('Sorry! we can\'t add spy with the details you provided')
+
+        print('Sorry! Invalid entry. We can\'t add spy with the details you provided')
+
     return len(friends)
 
 
@@ -57,14 +54,10 @@ def send_message():
     original_image = raw_input("What is the name of the image")
     output_path = 'output_image.png'
     text = raw_input("What do you want to say?")
-    print(text)
+
     Steganography.encode(original_image, output_path, text)
-    new_chat={
-        "message":text,
-        "time":datetime.now(),
-        "Sent_by_me":True
-    }
-    friends[friend_choice]['chats'].append(new_chat)
+    new_chat=ChatMessage(message=text, sent_by_me=True)
+    friends[friend_choice].chats.append(new_chat)
     with open("chats.csv", 'a') as chats_data:
         write = csv.writer(chats_data)
         write.writerow([friends[friend_choice].name, text, new_chat.time, new_chat.sent_by_me])
@@ -80,14 +73,9 @@ def read_message():
     output_file = raw_input("What is the name of the file?")
     secret_text = Steganography.decode(output_file)
     print(secret_text)
-    new_chat={
-        "message":secret_text,
-        "time":datetime.now(),
-        "sent_by_me":False
+    new_chat = ChatMessage(message=secret_text, sent_by_me=False)
+    friends[sender].chats.append(new_chat)
 
-    }
-    friends[sender]['chats'].append(new_chat)
-    print "Your secret message has been saved!"
 
     with open("chats.csv", 'ab') as chats_data:
         write = csv.writer(chats_data)
@@ -97,26 +85,21 @@ def read_message():
 
 ######################## for loading friends from friends.csv ##################################
 def load_friends():
-    with open('friends.csv', 'r') as friends_data:
-        reader = csv.reader(friends_data)
-        new_friend=[]
+    def load_friends():
+        with open('friends.csv', 'r') as friends_data:
+            reader = csv.reader(friends_data)
 
-        for row in reader:
-            #spy = Spy(name=row[0], salutation=row[1], age=int(row[3]), rating=float(row[2]))
-            new_friend['name'] = row[0]
-            new_friend['salutation'] = row[1]
-
-            new_friend['age'] = row[3]
-            new_friend['rating'] = row[2]
-            friends.append(new_friend)
+            for row in reader:
+                spy = Spy(name=row[0], salutation=row[1], age=int(row[3]), rating=float(row[2]))
+                friends.append(spy)
 
 
 ######################## function to select a friend  ################
 
 def select_friend():
-    item_number = 0
+    item_number = 1
     for friend in friends:
-        print("%d. %s" % ((item_number), friend['name']))
+        print("%d. %s aged %d with rating %.2f is online" % ((item_number), friend.name, friend.age, friend.rating))
         item_number = item_number + 1
     friend_choice = int(raw_input("Choose from your friends"))
     friend_choice_position = friend_choice - 1
@@ -156,12 +139,12 @@ def add_status(current_status_message):
 #################### function to choose menu ##############
 
 
-def start_chat(spy_name, spy_age, spy_rating):
+def start_chat(spy):
     current_status_message = None;
     show_menu = True
     load_friends()
     while show_menu:
-        print( colored("What do you want to do? \n 1) Add a status update 2) Add a friend 3) Send a secret message 4) Read a secret message 5) Read chats from a user 6) Show friend 7) Close application","blue"))
+        print( colored("What do you want to do? \n 1) Add a status update 2) Add a friend 3) Send a secret message 4) Read a secret message 5) Read content from friend list 6) Close application","blue"))
         menu_choice = raw_input()
 
         # Add Status Update
@@ -182,7 +165,7 @@ def start_chat(spy_name, spy_age, spy_rating):
         elif menu_choice == "4":
             read_message()
 
-        elif menu_choice == "6":
+        elif menu_choice == "5":
             for data in friends:
                 print("Name is " + str(data.name) + " age is " + str(data.age) + " rating is " + str(data.rating))
 
@@ -191,27 +174,27 @@ def start_chat(spy_name, spy_age, spy_rating):
 
 
 
-        elif menu_choice == "7":
+        elif menu_choice == "6":
             show_menu = False
         # Exit Application
 
 
-print(colored("Continue as " + spy_salutation + " " + spy_name + "(Y/N)?","green"))
+print(colored("Continue as " + spy.salutation + " " + spy.name + "(Y/N)?","green"))
 existing = raw_input()
 
 if existing == "Y" or existing == "y":
-    start_chat(spy_name, spy_age, spy_rating)
+    start_chat(spy)
 else:
     ####### get spyname and welcome him ########
     spy_name = int(raw_input("Welcome to spy chat, you must tell me your spy name first:\n"))
-    if len(spy_name) > 0:
-        print("Welcome!!! " + spy_name + ". Glad to have you back with us.")
+    if len(spy.name) > 0:
+        print("Welcome!!! " + spy.name + ". Glad to have you back with us.")
         ########## get spy's gender #######
-        spy_salutation = input("What shall we call you (Mr. or Mrs.?)")
+        spy.salutation = input("What shall we call you (Mr. or Mrs.?)")
         ######### concatinate salutation and name ########
-        spy_name = spy_salutation + " " + spy_name
+        spy.name = spy.salutation + " " + spy.name
         ######### get more details from spy ###########
-        print("Alright " + spy_name + ". I'd like to know a little bit more about...")
+        print("Alright " + spy.name + ". I'd like to know a little bit more about...")
 
 
     else:  ########### if the spy inputs a space #############
@@ -223,30 +206,30 @@ else:
     spy_is_online = False
 
     ################### input spy_age #####################
-    spy_age = int(raw_input("What is your age?"))
-    print(type(spy_age))
+    spy.age = int(raw_input("What is your age?"))
+    #print(type(spy.age))
 
     ##################### checking whether spy is of correct age and input rating of spy ######################
-    if spy_age > 12 and spy_age < 50:
-        spy_rating = float(raw_input("What is your spy rating?"))
+    if spy.age > 12 and spy.age < 50:
+        spy.rating = float(raw_input("What is your spy rating?"))
 
     ################# if spy is not in the age range #############
     else:
         print ("Sorry you are not of the correct age to be a spy")
 
-    if spy_rating > 4.5:
+    if spy.rating > 4.5:
         print ("Great ace!")
 
-    elif spy_rating > 3.5 and spy_rating <= 4.5:
+    elif spy.rating > 3.5 and spy.rating <= 4.5:
         print ("You are one of the good ones.")
 
-    elif spy_rating >= 2.5 and spy_rating <= 3.5:
+    elif spy.rating >= 2.5 and spy.rating <= 3.5:
         print ("You can always do better")
     else:
         print ("We can always use somebody to help in the office.")
 
     ############# concatinating string with int and float #################
-    spy_is_online = True
+    spy.is_online = True
 
     print ("Authentication complete. Welcome %s of age: %d and rating of: %.1f. Proud to have you onboard." % (
-    spy_name, spy_age, spy_rating))
+    spy.name, spy.age, spy.rating))

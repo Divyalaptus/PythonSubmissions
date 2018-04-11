@@ -1,12 +1,30 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 26 07:42:50 2018
+from datetime import datetime
+class Spy:
 
-@author: Divyalaptus
-"""
+    def __init__(self, name, salutation, age, rating):
+        # Initializing the values
+        self.name = name
+        self.salutation = salutation
+        self.age = age
+        self.rating = rating
+        self.is_online = True
+        self.chats = []
+        self.current_status_message = None
+        # Count the number of words
+        self.count = 0
 
-spy_name = "Mr. James Bond"
-spy_age = 45
-spy_rating = 4
-print("Welcome %s of age: %d having a rating of: %d,"(spy_name, spy_age, spy_rating))
-from steganography.steganography import Steganography
+# a class for chat_messages
+class ChatMessage:
+    def __init__(self, message, sent_by_me):
+        self.message = message
+        self.time = datetime.now()
+        self.sent_by_me = sent_by_me
+
+spy = Spy('Divyansh', 'Mr.', 20, 4.5)
+
+friend_one = Spy('Himalaya', 'Mr.', 27, 4.8)
+friend_two = Spy('Vaibhav', 'Mr.', 21, 4.9)
+friend_three = Spy('Sachin', 'Mr.', 27 , 4.9)
+
+# List of friends
+friends = [friend_one, friend_two, friend_three]
