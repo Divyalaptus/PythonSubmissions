@@ -70,3 +70,18 @@ runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.
 
 ## ---(Mon Apr  9 20:58:27 2018)---
 runfile('C:/Users/Divyalaptus/.spyder-py3/main.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sat May  5 21:55:08 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Fri May 25 07:37:58 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Fri May 25 09:05:31 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+help(print)
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
