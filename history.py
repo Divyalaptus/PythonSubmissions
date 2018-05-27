@@ -85,3 +85,19 @@ runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyala
 runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
 help(print)
 runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sat May 26 22:20:12 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+import tweepy 
+import tweepy  
+
+## ---(Sun May 27 17:10:59 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+
+## ---(Sun May 27 20:29:02 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+%clear
+
+## ---(Sun May 27 21:59:59 2018)---
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')
+runfile('C:/Users/Divyalaptus/.spyder-py3/twitterBot.py', wdir='C:/Users/Divyalaptus/.spyder-py3')

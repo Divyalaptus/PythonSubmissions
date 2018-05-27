@@ -13,8 +13,35 @@ ACCESS_TOKEN = '1105441700-aKxXANu5r3KZ4SYB28OpYfEpqip9nSqnnpA51Qs'
 ACCESS_TOKEN_SECRET = 'DNw53zlBrdc4Jf7gJLFLAzurYSSVZoBrGdsQXtZ0fNC7S' 
 
 from twitter import Twitter, OAuth
-#import pprint
+import tweepy
+#import textblob
+from textblob import TextBlob
 
+#import pprint
+oauth = tweepy.OAuthHandler(API_KEY , API_SECRET)
+b = tweepy.OAuthHandler('134' , '213')
+oauth.set_access_token(ACCESS_TOKEN , ACCESS_TOKEN_SECRET)
+
+
+api = tweepy.API(oauth)
+
+
+
+                           
+new_tweets = api.user_timeline(screen_name = '@ChelseaFC',count=200)
+
+def sentiment_analysis(query):
+    query = '#'+query
+    public_tweets = api.search(query)
+    for tweet in public_tweets:
+      print(tweet.text)
+      
+      analyse = TextBlob(tweet.text)
+      
+      print(analyse.sentiment)
+      
+      print("--------------")
+                           
 twitter_oauth = OAuth(ACCESS_TOKEN, ACCESS_TOKEN_SECRET, API_KEY, API_SECRET)
 
 twitter = Twitter(auth = twitter_oauth)
@@ -41,6 +68,25 @@ def get_num_followers(query):
         num_followers+=each_tweet['user']['followers_count']
     return num_followers
 
+def demographic_data(query):
+    tweets = get_tweets(query)
+    for each_tweet in tweets['statuses']:
+        print(each_tweet['user']['location'])
+        print(each_tweet['user']['time_zone'])
+        print(each_tweet['user']['lang'])
+    
+def ModiVsTrump():
+    import nltk
+    from nltk.corpus import stopwords
+    stuff = api.user_timeline(screen_name = "narendramodi", count = 200, tweet_mode = 'extended')
+    type(stuff)
+    
+    nltk.download('stopwords')
+    stop_words= set(stopwords.words('english'))
+    
+def add_tweet(tweet):
+    api.send_direct_message(screen_name='@TubiDy_NTSOMY', text = tweet)
+    
 def main():
     while(True):
         user_choice = input("1. Count the Followers of Peope Tweeting using a certain hash tag.\n"
@@ -55,23 +101,23 @@ def main():
             print("\n\n Max. number of users who have seen this hash tag: %s"% (get_num_followers(user_input)))
             
         elif user_choice == '2':
-            #user_input = raw_input("Enter the Hash tag: ")
-            #demographic_data(user_input)
-            pass
+            user_input = input("Enter the Hash tag: ")
+            demographic_data(user_input)
+            
         elif user_choice == '3':
             #ModiVsTrump()
             pass
         elif user_choice == '4':
-            #user_input = raw_input("Enter the Hash tag")
-            #sentiment_analysis(user_input)
-            pass
+            user_input = input("Enter the Hash tag:")
+            sentiment_analysis(user_input)
+            
         elif user_choice == '5':
             #ModiTopWords()
             pass
         elif user_choice == '6':
-            #user_input = raw_input("Enter the Tweet: ")
-            #add_tweet(user_input)
-            pass
+            user_input = input("Enter the Tweet: ")
+            add_tweet(user_input)
+            
         elif user_choice == '7':
             break
         
